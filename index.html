@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rana Da Dera - Fine Dining & Restaurant | Rawalpindi</title>
+    <meta name="description" content="Rana Da Dera — Authentic Punjabi cuisine in Naseerabad, Rawalpindi. Best Karahi, BBQ, Biryani & more. Open 2AM–3PM Daily.">
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ✅ Our CSS File -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ================================================
+         PAGE LOADER
+         ================================================ -->
+    <div class="page-loader" id="loader">
+        <div class="loader-logo">RANA DA DERA</div>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
+        <div class="loader-sub">Fine Dining &amp; Restaurant</div>
+    </div>
+
+    <!-- ================================================
+         MOBILE MENU
+         ================================================ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <span class="mobile-close" onclick="closeMobileMenu()">&#10005;</span>
+        <a href="#home"        onclick="closeMobileMenu()">Home</a>
+        <a href="#about"       onclick="closeMobileMenu()">About</a>
+        <a href="#menu"        onclick="closeMobileMenu()">Menu</a>
+        <a href="#gallery"     onclick="closeMobileMenu()">Gallery</a>
+        <a href="#reviews"     onclick="closeMobileMenu()">Reviews</a>
+        <a href="#reservation" onclick="closeMobileMenu()">Reserve Table</a>
+        <a href="#contact"     onclick="closeMobileMenu()">Contact</a>
+    </div>
+
+    <!-- ================================================
+         NAVBAR
+         ================================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <a href="#menu" class="active">Menu</a>
+            <a href="#about">About</a>
+            <a href="#reservation">Reserve</a>
+        </div>
+
+        <div class="nav-logo">
+            <h1>RANA DA DERA</h1>
+            <p>Fine Dining &amp; Restaurant</p>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-search">
+                <input type="text" placeholder="Search dishes...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="nav-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge">0</span>
+            </div>
+            <div class="hamburger" onclick="openMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================================================
+         HERO SECTION
+         ================================================ -->
+    <section class="hero" id="home">
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                Rawalpindi's Finest Desi Restaurant
+            </div>
+
+            <h1 class="hero-title">
+                Taste The <span class="highlight">Authentic</span><br>
+                <span class="gold-text">Desi Flavors</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                From sizzling karahis to smoky BBQ platters — experience the true taste of Punjab
+                at Rana Da Dera, Naseerabad, Rawalpindi. Open every day from 2AM to 3PM.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#menu" class="btn-primary">
+                    <i class="fas fa-utensils"></i> Explore Menu
+                </a>
+                <a href="#reservation" class="btn-gold">
+                    <i class="fas fa-calendar-check"></i> Book Table
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-num">50<span>+</span></div>
+                    <div class="stat-label">Dishes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">10<span>k+</span></div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">15<span>+</span></div>
+                    <div class="stat-label">Years of Taste</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=700&q=80"
+                alt="Karahi - Rana Da Dera"
+                class="hero-main-img"
+            >
+            <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=250&q=80" alt="Biryani"  class="floating-food float-1">
+            <img src="https://images.unsplash.com/photo-1563379091339-03246963d775?w=200&q=80" alt="BBQ"      class="floating-food float-2">
+            <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=200&q=80" alt="Kebab"    class="floating-food float-3">
+
+            <div class="rotating-badge">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <path id="circle-path" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/>
+                    </defs>
+                    <text fill="#D4AF37" font-size="10.5" font-weight="700" letter-spacing="1.5">
+                        <textPath href="#circle-path">• ORDER NOW • DESI TASTE • RAWALPINDI •</textPath>
+                    </text>
+                </svg>
+                <div class="center">🍽️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         ABOUT SECTION
+         ================================================ -->
+    <section class="about" id="about">
+        <div class="about-img-wrap" data-aos="fade-right" data-aos-duration="900">
+            <div class="about-decor"></div>
+            <img
+                src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=700&q=80"
+                alt="Rana Da Dera Restaurant"
+                class="about-main-img"
+            >
+            <div class="about-badge">
+                <div class="num">15+</div>
+                <div class="lbl">Years of Excellence</div>
+            </div>
+        </div>
+
+        <div class="about-content" data-aos="fade-left" data-aos-duration="900">
+            <span class="section-tag">About Us</span>
+            <h2 class="section-title">
+                We Serve <span class="green">Authentic</span><br>
+                <span class="gold">Punjabi Cuisine</span>
+            </h2>
+            <p class="section-text">
+                At Rana Da Dera, we bring you the soul of Punjabi cooking — rich, hearty, and full of
+                flavor. Every dish is crafted with fresh ingredients, traditional spices, and the love
+                that has kept our guests coming back for over 15 years. From smoky BBQ to creamy karahis,
+                nihari to biryani — we've got it all.
+            </p>
+            <div class="feature-list">
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Fresh Ingredients Daily</div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Traditional Recipes</div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Expert Desi Chefs</div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Hygienic Kitchen</div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Dine-In &amp; Takeaway</div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Family Friendly</div>
+            </div>
+            <a href="#menu" class="btn-outline">
+                <i class="fas fa-play-circle"></i> Explore Our Menu
+            </a>
+        </div>
+    </section>
+
+    <!-- ================================================
+         MENU / POPULAR DISHES
+         ================================================ -->
+    <section class="menu-section" id="menu">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Our Specialties</span>
+            <h2 class="section-title">Popular <span class="gold">Dishes</span></h2>
+        </div>
+
+        <div class="menu-tabs" data-aos="fade-up" data-aos-delay="100">
+            <button class="menu-tab active"  onclick="filterDishes('all', this)">All</button>
+            <button class="menu-tab"         onclick="filterDishes('karahi', this)">Karahi</button>
+            <button class="menu-tab"         onclick="filterDishes('bbq', this)">BBQ &amp; Grills</button>
+            <button class="menu-tab"         onclick="filterDishes('rice', this)">Rice &amp; Biryani</button>
+            <button class="menu-tab"         onclick="filterDishes('desi', this)">Desi Specials</button>
+        </div>
+
+        <!-- Dishes injected by script.js -->
+        <div class="dishes-grid" id="dishesGrid"></div>
+    </section>
+
+    <!-- ================================================
+         GALLERY SECTION
+         ================================================ -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Our Ambiance &amp; Food</span>
+            <h2 class="section-title">Food <span class="gold">Gallery</span></h2>
+        </div>
+
+        <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=900&q=80" alt="Restaurant Ambiance">
+                <div class="gallery-overlay"><span>🍽️ Our Restaurant</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500&q=80" alt="Karahi">
+                <div class="gallery-overlay"><span>🥘 Mutton Karahi</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1563379091339-03246963d775?w=500&q=80" alt="BBQ">
+                <div class="gallery-overlay"><span>🔥 BBQ Platter</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&q=80" alt="Biryani">
+                <div class="gallery-overlay"><span>🍚 Chicken Biryani</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=500&q=80" alt="Seekh Kebab">
+                <div class="gallery-overlay"><span>🍖 Seekh Kebab</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&#10005;</span>
+        <img src="" id="lightboxImg" alt="Gallery Image">
+    </div>
+
+    <!-- ================================================
+         TESTIMONIALS / REVIEWS
+         ================================================ -->
+    <section class="testimonials" id="reviews">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Customer Love</span>
+            <h2 class="section-title">What Our <span style="color:var(--gold)">Guests</span> Say</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "Best karahi in Rawalpindi! The mutton karahi is absolutely divine — rich, tender, and
+                    full of flavor. The atmosphere is warm and welcoming. Definitely coming back!"
+                </p>
+                <div class="reviewer">
+                    <img src="https://i.pravatar.cc/100?img=11" alt="Ahmed Raza" class="reviewer-avatar">
+                    <div>
+                        <div class="reviewer-name">Ahmed Raza</div>
+                        <div class="reviewer-label">Regular Customer, Rawalpindi</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "The BBQ platter is something else! Perfectly marinated, smoky, and juicy seekh kebabs.
+                    True taste of Punjab in every bite. Rana Da Dera is the best in Naseerabad!"
+                </p>
+                <div class="reviewer">
+                    <img src="https://i.pravatar.cc/100?img=32" alt="Sara Malik" class="reviewer-avatar">
+                    <div>
+                        <div class="reviewer-name">Sara Malik</div>
+                        <div class="reviewer-label">Food Blogger, Islamabad</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="review-text">
+                    "Visited with family for a special dinner. Service was warm, food was exceptional.
+                    The Nihari with naan is a must-try! Great value for money. Highly recommended!"
+                </p>
+                <div class="reviewer">
+                    <img src="https://i.pravatar.cc/100?img=51" alt="Usman Khan" class="reviewer-avatar">
+                    <div>
+                        <div class="reviewer-name">Usman Khan</div>
+                        <div class="reviewer-label">Family Visitor, Rawalpindi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         DELIVERY & PICKUP
+         ================================================ -->
+    <section class="delivery-section" id="delivery">
+        <div class="delivery-grid">
+            <div data-aos="fade-right">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">Delivery &amp; <span class="gold">Pickup</span> Options</h2>
+                <p class="section-text">
+                    We make it easy to enjoy Rana Da Dera's delicious food — whether you prefer
+                    to dine in, pick up, or get it delivered hot to your door. Just message us on
+                    WhatsApp to place an order!
+                </p>
+                <a
+                    href="https://wa.me/923014431520?text=Hello!%20I%20want%20to%20place%20an%20order%20from%20Rana%20Da%20Dera."
+                    class="btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                </a>
+            </div>
+
+            <div class="delivery-cards" data-aos="fade-left">
+                <div class="del-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="del-icon"><i class="fas fa-motorcycle"></i></div>
+                    <div class="del-title">Home Delivery</div>
+                    <div class="del-text">Hot food delivered to your door in Naseerabad &amp; nearby areas</div>
+                </div>
+                <div class="del-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="del-icon"><i class="fas fa-store"></i></div>
+                    <div class="del-title">Dine In</div>
+                    <div class="del-text">Enjoy the authentic dera atmosphere at our restaurant</div>
+                </div>
+                <div class="del-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="del-icon"><i class="fas fa-car"></i></div>
+                    <div class="del-title">Takeaway</div>
+                    <div class="del-text">Order ahead and pick up at your convenience</div>
+                </div>
+                <div class="del-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="del-icon"><i class="fas fa-users"></i></div>
+                    <div class="del-title">Party Orders</div>
+                    <div class="del-text">Bulk orders for events, weddings &amp; celebrations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         RESERVATION SECTION
+         ================================================ -->
+    <section class="reservation" id="reservation">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Book a Table</span>
+            <h2 class="section-title">Make a <span class="gold">Reservation</span></h2>
+        </div>
+
+        <div class="reservation-wrap">
+            <div data-aos="fade-right">
+                <p class="section-text">
+                    Reserve your table now and enjoy a wonderful dining experience with your family &amp;
+                    friends. Your reservation details will be sent directly to our WhatsApp.
+                </p>
+
+                <div class="res-info-item">
+                    <div class="res-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="res-info-text">
+                        <h4>Our Location</h4>
+                        <p>Naseerabad, Rawalpindi, Punjab, Pakistan</p>
+                    </div>
+                </div>
+
+                <div class="res-info-item">
+                    <div class="res-info-icon"><i class="fas fa-clock"></i></div>
+                    <div class="res-info-text">
+                        <h4>Opening Hours</h4>
+                        <p>2:00 AM – 3:00 PM &nbsp;•&nbsp; Everyday</p>
+                    </div>
+                </div>
+
+                <div class="res-info-item">
+                    <div class="res-info-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="res-info-text">
+                        <h4>Call / WhatsApp</h4>
+                        <p>0301-4431520</p>
+                    </div>
+                </div>
+
+                <div class="res-info-item">
+                    <div class="res-info-icon"><i class="fas fa-car"></i></div>
+                    <div class="res-info-text">
+                        <h4>Parking</h4>
+                        <p>Free parking available for all guests</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reservation-form" data-aos="fade-left">
+                <h3 class="form-title">&#128197; Book Your Table</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="resName">Full Name *</label>
+                        <input type="text" id="resName" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resPhone">Phone Number *</label>
+                        <input type="tel" id="resPhone" placeholder="0300-0000000" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="resDate">Date *</label>
+                        <input type="date" id="resDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resTime">Time *</label>
+                        <input type="time" id="resTime" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="resGuests">Number of Guests</label>
+                        <select id="resGuests">
+                            <option>1 Person</option>
+                            <option selected>2 People</option>
+                            <option>3–5 People</option>
+                            <option>6–10 People</option>
+                            <option>10+ People (Party)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resOccasion">Occasion</label>
+                        <select id="resOccasion">
+                            <option>Regular Dining</option>
+                            <option>Birthday Party</option>
+                            <option>Anniversary</option>
+                            <option>Family Gathering</option>
+                            <option>Business Lunch</option>
+                            <option>Wedding Function</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="resMessage">Special Requests (Optional)</label>
+                    <textarea id="resMessage" placeholder="Any special requests, dietary needs, or preferences..."></textarea>
+                </div>
+
+                <button class="btn-whatsapp" onclick="sendReservation()">
+                    <i class="fab fa-whatsapp" style="font-size:20px;"></i>
+                    Send Reservation via WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         NEWSLETTER
+         ================================================ -->
+    <section class="newsletter" id="contact">
+        <div class="newsletter-wrap" data-aos="fade-up">
+            <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700&q=80"
+                alt="Newsletter — Rana Da Dera"
+                class="newsletter-img"
+            >
+            <div class="newsletter-content">
+                <span class="tag">Newsletter</span>
+                <h2>Subscribe for<br>Special Offers</h2>
+                <p>Get exclusive deals, new dish alerts &amp; seasonal offers from Rana Da Dera delivered to your inbox!</p>
+                <div class="newsletter-form">
+                    <input type="email" id="nlEmail" placeholder="Enter your email address">
+                    <button onclick="subscribeNewsletter()">
+                        Subscribe <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         FOOTER
+         ================================================ -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <h2>RANA DA DERA</h2>
+                <span class="sub">Fine Dining &amp; Restaurant</span>
+                <p>Serving authentic Punjabi cuisine with love, warmth, and tradition for over 15 years. Come taste the real flavors of Punjab.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/923014431520" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#menu"><i class="fas fa-chevron-right"></i> Our Menu</a></li>
+                    <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="#reservation"><i class="fas fa-chevron-right"></i> Reservation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="#delivery"><i class="fas fa-chevron-right"></i> Delivery Info</a></li>
+                    <li><a href="#reviews"><i class="fas fa-chevron-right"></i> Reviews</a></li>
+                    <li>
+                        <a href="https://wa.me/923014431520" target="_blank" rel="noopener">
+                            <i class="fas fa-chevron-right"></i> WhatsApp Order
+                        </a>
+                    </li>
+                    <li><a href="#reservation"><i class="fas fa-chevron-right"></i> Book a Table</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact">
+                    <p><strong>&#128205;</strong> Naseerabad, Rawalpindi<br>Punjab, Pakistan</p>
+                    <p><strong>&#128222;</strong> 0301-4431520</p>
+                    <p><strong>&#128336;</strong> 2:00 AM – 3:00 PM<br>Open Every Day</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rana Da Dera. All Rights Reserved. | Naseerabad, Rawalpindi</p>
+            <div class="payment-badges">
+                <span>Cash</span>
+                <span>JazzCash</span>
+                <span>Easypaisa</span>
+                <span>Bank Transfer</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- ================================================
+         SCRIPTS — AOS first, then our JS file
+         ================================================ -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- ✅ Our JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>
