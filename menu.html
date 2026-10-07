@@ -34,16 +34,23 @@
          ================================================ -->
     <div class="mobile-menu" id="mobileMenu">
         <span class="mobile-close" onclick="closeMobileMenu()">&#10005;</span>
+        <div class="kitchen-status-pill open" style="margin-bottom:10px;">
+            <span class="status-dot green"></span>
+            <span>Kitchen Open (2AM–3PM)</span>
+        </div>
         <a href="index.html"             onclick="closeMobileMenu()">Home</a>
-        <a href="menu.html"              onclick="closeMobileMenu()" style="color:var(--gold);">Full Menu</a>
+        <a href="menu.html"              onclick="closeMobileMenu()" style="color:var(--gold);">Royal Menu</a>
         <a href="index.html#about"       onclick="closeMobileMenu()">About Us</a>
+        <a href="index.html#thali-section" onclick="closeMobileMenu()">Custom Thali</a>
         <a href="index.html#gallery"     onclick="closeMobileMenu()">Gallery</a>
-        <a href="index.html#reviews"     onclick="closeMobileMenu()">Reviews</a>
+        <a href="index.html#delivery-checker" onclick="closeMobileMenu()">Delivery Zones</a>
         <a href="index.html#reservation" onclick="closeMobileMenu()">Reserve Table</a>
-        <a href="index.html#contact"     onclick="closeMobileMenu()">Contact</a>
         <a href="javascript:void(0)"     onclick="closeMobileMenu(); openCart();" style="color:var(--green);">
             <i class="fas fa-shopping-bag"></i> View Cart (<span class="cart-badge" style="position:static; display:inline-flex;">0</span>)
         </a>
+        <button class="btn-theme-toggle" onclick="toggleTheme()" style="margin-top:10px;" aria-label="Toggle Theme">
+            <i class="fas fa-moon"></i>
+        </button>
     </div>
 
     <!-- ================================================
@@ -53,7 +60,7 @@
         <div class="nav-left">
             <a href="index.html">Home</a>
             <a href="menu.html" class="active">Royal Menu</a>
-            <a href="index.html#about">About</a>
+            <a href="index.html#thali-section">Custom Thali</a>
             <a href="index.html#reservation">Reserve</a>
         </div>
 
@@ -65,6 +72,13 @@
         </div>
 
         <div class="nav-right">
+            <div class="kitchen-status-pill open">
+                <span class="status-dot green"></span>
+                <span>Kitchen Open (2AM–3PM)</span>
+            </div>
+            <button class="btn-theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
             <div class="nav-cart" title="View Your Cart" aria-label="Open Cart">
                 <i class="fas fa-shopping-bag"></i>
                 <span class="cart-badge">0</span>
@@ -91,10 +105,15 @@
             <p class="menu-hero-subtitle">
                 Crafted with authentic Punjabi recipes, fresh hand-slaughtered meats, pure desi ghee, and roasted whole spices. Available every day from <strong>2:00 AM to 3:00 PM</strong> in Naseerabad, Rawalpindi.
             </p>
-            <div class="menu-breadcrumbs">
-                <a href="index.html"><i class="fas fa-home"></i> Home</a>
-                <span>/</span>
-                <span>Royal Menu</span>
+            <div style="display:flex; gap:16px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:20px;">
+                <div class="menu-breadcrumbs">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <span>/</span>
+                    <span>Royal Menu</span>
+                </div>
+                <button class="btn-print-menu" onclick="printRoyalMenu()" title="Print or Save PDF Menu">
+                    <i class="fas fa-print"></i> Print / Save PDF
+                </button>
             </div>
         </div>
     </section>
@@ -268,9 +287,20 @@
         </div>
 
         <div class="cart-footer" id="cartFooter">
+            <!-- Coupon Code Section -->
+            <div class="cart-coupon-wrap">
+                <input type="text" id="cartCouponInput" placeholder="Promo Code (DERA10 / FIRSTORDER)" class="cart-coupon-input" aria-label="Enter coupon code">
+                <button class="btn-apply-coupon" onclick="applyCoupon()">Apply</button>
+            </div>
+            <div id="couponAppliedBadge" class="coupon-applied-badge" style="display:none;"></div>
+
             <div class="cart-summary-row">
                 <span>Subtotal</span>
                 <span id="cartSubtotal">PKR 0</span>
+            </div>
+            <div class="cart-summary-row" id="cartDiscountRow" style="display:none; color:var(--green); font-weight:600;">
+                <span>Discount Applied</span>
+                <span id="cartDiscountValue">- PKR 0</span>
             </div>
             <div class="cart-summary-row">
                 <span>Delivery (Naseerabad &amp; RWP)</span>
@@ -297,6 +327,37 @@
     <div class="cart-toast" id="cartToast">
         <i class="fas fa-check-circle"></i>
         <span id="cartToastMsg">Item added to cart!</span>
+    </div>
+
+    <!-- ================================================
+         FEATURE 2: DISH QUICK-VIEW MODAL
+         ================================================ -->
+    <div class="quickview-backdrop" id="quickviewBackdrop" onclick="if(event.target===this)closeQuickView()">
+        <div class="quickview-modal" id="quickviewModal" role="dialog" aria-modal="true" aria-label="Dish Details">
+            <button class="quickview-close" onclick="closeQuickView()" aria-label="Close dialog">&times;</button>
+            <div class="quickview-image-wrap">
+                <img src="" id="qvImage" alt="Dish photo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80';">
+            </div>
+            <div class="quickview-content">
+                <span class="quickview-badge" id="qvBadge">🔥 Specialty</span>
+                <h2 class="quickview-title" id="qvTitle">Dish Name</h2>
+                <p class="quickview-desc" id="qvDesc">Dish description goes here.</p>
+                <div class="quickview-meta-row">
+                    <span class="quickview-pill spice-meter" id="qvSpice">🌶️🌶️ Medium</span>
+                    <span class="quickview-pill" id="qvServing">Serves 2-3 Persons</span>
+                </div>
+                <div style="margin-bottom:12px; font-size:13px; font-weight:700; color:var(--dark);">Key Desi Ingredients:</div>
+                <div class="quickview-meta-row" id="qvIngredients">
+                    <!-- Pills injected by JS -->
+                </div>
+                <div class="quickview-price-row">
+                    <div class="quickview-price" id="qvPrice">PKR 0</div>
+                    <button class="btn-primary" id="qvAddBtn" style="padding:12px 28px; font-size:14px;">
+                        <i class="fas fa-cart-plus"></i> Add to Order
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Back to Top -->
