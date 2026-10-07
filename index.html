@@ -34,16 +34,23 @@
          ================================================ -->
     <div class="mobile-menu" id="mobileMenu">
         <span class="mobile-close" onclick="closeMobileMenu()">&#10005;</span>
+        <div class="kitchen-status-pill open" style="margin-bottom:10px;">
+            <span class="status-dot green"></span>
+            <span>Kitchen Open (2AM–3PM)</span>
+        </div>
         <a href="#home"                onclick="closeMobileMenu()">Home</a>
         <a href="menu.html"            onclick="closeMobileMenu()" style="color:var(--gold);">Royal Menu</a>
         <a href="#about"               onclick="closeMobileMenu()">About</a>
+        <a href="#thali-section"       onclick="closeMobileMenu()">Custom Thali</a>
         <a href="#gallery"             onclick="closeMobileMenu()">Gallery</a>
-        <a href="#reviews"             onclick="closeMobileMenu()">Reviews</a>
+        <a href="#delivery-checker"    onclick="closeMobileMenu()">Delivery Zones</a>
         <a href="#reservation"         onclick="closeMobileMenu()">Reserve Table</a>
-        <a href="#contact"             onclick="closeMobileMenu()">Contact</a>
         <a href="javascript:void(0)"   onclick="closeMobileMenu(); openCart();" style="color:var(--green);">
             <i class="fas fa-shopping-bag"></i> View Cart (<span class="cart-badge" style="position:static; display:inline-flex;">0</span>)
         </a>
+        <button class="btn-theme-toggle" onclick="toggleTheme()" style="margin-top:10px;" aria-label="Toggle Theme">
+            <i class="fas fa-moon"></i>
+        </button>
     </div>
 
     <!-- ================================================
@@ -53,24 +60,30 @@
         <div class="nav-left">
             <a href="menu.html">Royal Menu</a>
             <a href="#about">About</a>
+            <a href="#thali-section">Custom Thali</a>
             <a href="#reservation">Reserve</a>
         </div>
 
         <div class="nav-logo">
-            <h1>RANA DA DERA</h1>
-            <p>Fine Dining &amp; Restaurant</p>
+            <a href="#home" style="text-decoration:none; color:inherit;">
+                <h1>RANA DA DERA</h1>
+                <p>Fine Dining &amp; Restaurant</p>
+            </a>
         </div>
 
         <div class="nav-right">
-            <div class="nav-search">
-                <input type="text" placeholder="Search dishes...">
-                <i class="fas fa-search"></i>
+            <div class="kitchen-status-pill open">
+                <span class="status-dot green"></span>
+                <span>Kitchen Open (2AM–3PM)</span>
             </div>
-            <div class="nav-cart">
+            <button class="btn-theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="nav-cart" title="View Order Cart" aria-label="View Cart">
                 <i class="fas fa-shopping-bag"></i>
                 <span class="cart-badge">0</span>
             </div>
-            <div class="hamburger" onclick="openMobileMenu()">
+            <div class="hamburger" onclick="openMobileMenu()" aria-label="Open Mobile Menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -213,11 +226,146 @@
         <!-- Dishes injected by script.js -->
         <div class="dishes-grid" id="dishesGrid"></div>
 
-        <!-- Explore Full Royal Menu Button -->
-        <div class="view-full-menu-wrap" data-aos="fade-up">
+        <!-- Explore Full Royal Menu & Print Buttons -->
+        <div class="view-full-menu-wrap" data-aos="fade-up" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; align-items:center;">
             <a href="menu.html" class="btn-royal-menu">
                 <i class="fas fa-utensils"></i> View Full Royal Menu (18+ Dishes) <i class="fas fa-arrow-right"></i>
             </a>
+            <button class="btn-print-menu" onclick="printRoyalMenu()" title="Print or Save as PDF">
+                <i class="fas fa-print"></i> Print / Save PDF Menu
+            </button>
+        </div>
+    </section>
+
+    <!-- ================================================
+         FEATURE 1: "MAKE YOUR OWN DERA THALI" BUILDER
+         ================================================ -->
+    <section class="thali-builder-section" id="thali-section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Interactive Customizer</span>
+            <h2 class="section-title">Build Your Own <span class="gold">Royal Dera Thali</span></h2>
+            <p class="section-text" style="max-width:650px; margin:0 auto;">
+                Create your personalized feast! Pick your favorite main karahi, grilled BBQ, fragrant rice, fresh tandoori bread, and chilled lassi — all assembled on one royal platter.
+            </p>
+        </div>
+
+        <div class="thali-layout" data-aos="fade-up" data-aos-delay="100">
+            <!-- Visual Thali Platter Graphic -->
+            <div class="thali-visual-plate">
+                <!-- Center Main Karahi -->
+                <div class="thali-center-katori" id="thaliCenterKatori">
+                    <div class="thali-katori-icon">🥘</div>
+                    <div class="thali-katori-label">Mutton Karahi</div>
+                </div>
+
+                <!-- Satellite Bowls around Thali -->
+                <div class="thali-slot slot-top" id="thaliSlotTop" title="Charcoal BBQ">
+                    <div style="font-size:18px;">🍢</div>
+                    <div style="font-size:10px; font-weight:700;">Seekh Kebab</div>
+                </div>
+                <div class="thali-slot slot-right" id="thaliSlotRight" title="Fragrant Rice">
+                    <div style="font-size:18px;">🍚</div>
+                    <div style="font-size:10px; font-weight:700;">Biryani</div>
+                </div>
+                <div class="thali-slot slot-bottom" id="thaliSlotBottom" title="Tandoori Bread">
+                    <div style="font-size:18px;">🥖</div>
+                    <div style="font-size:10px; font-weight:700;">Roghni Naan</div>
+                </div>
+                <div class="thali-slot slot-left" id="thaliSlotLeft" title="Chilled Drink / Sweet">
+                    <div style="font-size:18px;">🥛</div>
+                    <div style="font-size:10px; font-weight:700;">Malai Lassi</div>
+                </div>
+            </div>
+
+            <!-- Steps & Controls -->
+            <div class="thali-steps-container">
+                <!-- Step 1: Main Curry -->
+                <div class="thali-step-block">
+                    <div class="thali-step-title">
+                        <span>1. Select Main Curry / Karahi</span>
+                        <small style="color:var(--gold); font-size:12px;">Center Dish</small>
+                    </div>
+                    <div class="thali-options-grid">
+                        <button class="thali-opt-btn active" onclick="selectThaliItem('main', 'Mutton Karahi', 950, '🥘', this)">
+                            🥘 Mutton Karahi <span>PKR 950</span>
+                        </button>
+                        <button class="thali-opt-btn" onclick="selectThaliItem('main', 'Chicken Handi', 800, '🫙', this)">
+                            🫙 Chicken Handi <span>PKR 800</span>
+                        </button>
+                        <button class="thali-opt-btn" onclick="selectThaliItem('main', 'Special Nihari', 700, '🍲', this)">
+                            🍲 Special Nihari <span>PKR 700</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: BBQ -->
+                <div class="thali-step-block">
+                    <div class="thali-step-title">
+                        <span>2. Select Charcoal BBQ</span>
+                        <small style="color:var(--gold); font-size:12px;">Smoky Cut</small>
+                    </div>
+                    <div class="thali-options-grid">
+                        <button class="thali-opt-btn active" onclick="selectThaliItem('bbq', 'Beef Seekh Kebab', 450, '🍢', this)">
+                            🍢 Seekh Kebab <span>PKR 450</span>
+                        </button>
+                        <button class="thali-opt-btn" onclick="selectThaliItem('bbq', 'Chicken Tikka', 500, '🔥', this)">
+                            🔥 Chicken Tikka <span>PKR 500</span>
+                        </button>
+                        <button class="thali-opt-btn" onclick="selectThaliItem('bbq', 'Malai Boti', 550, '🧀', this)">
+                            🧀 Malai Boti <span>PKR 550</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Rice -->
+                <div class="thali-step-block">
+                    <div class="thali-step-title">
+                        <span>3. Select Rice / Carb</span>
+                        <small style="color:var(--gold); font-size:12px;">Basmati</small>
+                    </div>
+                    <div class="thali-options-grid">
+                        <button class="thali-opt-btn active" onclick="selectThaliItem('rice', 'Special Biryani', 350, '🍚', this)">
+                            🍚 Chicken Biryani <span>PKR 350</span>
+                        </button>
+                        <button class="thali-opt-btn" onclick="selectThaliItem('rice', 'Bannu Pulao', 400, '✨', this)">
+                            ✨ Bannu Pulao <span>PKR 400</span>
+                        </button>
+                        <button class="thali-opt-btn" onclick="selectThaliItem('rice', 'Steamed Rice', 200, '🌾', this)">
+                            🌾 Steamed Rice <span>PKR 200</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Bread & Drink -->
+                <div class="thali-step-block">
+                    <div class="thali-step-title">
+                        <span>4. Select Fresh Bread &amp; Drink</span>
+                        <small style="color:var(--gold); font-size:12px;">Accompaniments</small>
+                    </div>
+                    <div class="thali-options-grid">
+                        <button class="thali-opt-btn active" onclick="selectThaliItem('bread', 'Roghni Naan', 100, '🥖', this)">
+                            🥖 Roghni Naan <span>PKR 100</span>
+                        </button>
+                        <button class="thali-opt-btn" onclick="selectThaliItem('bread', 'Garlic Naan', 150, '🧄', this)">
+                            🧄 Garlic Naan <span>PKR 150</span>
+                        </button>
+                        <button class="thali-opt-btn active" onclick="selectThaliItem('drink', 'Malai Lassi', 200, '🥛', this)">
+                            🥛 Malai Lassi <span>PKR 200</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Thali Total & Add to Cart -->
+                <div class="thali-checkout-bar">
+                    <div class="thali-total-box">
+                        <h4>Royal Thali Total:</h4>
+                        <div class="price" id="thaliTotalPrice">PKR 2,050</div>
+                    </div>
+                    <button class="btn-add-thali" onclick="addCustomThaliToCart()">
+                        <i class="fas fa-cart-plus"></i> Add Thali to Cart
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -370,6 +518,52 @@
                     <div class="del-title">Party Orders</div>
                     <div class="del-text">Bulk orders for events, weddings &amp; celebrations</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         FEATURE 5: DELIVERY ZONE CHECKER & GOOGLE MAP
+         ================================================ -->
+    <section class="delivery-checker-section" id="delivery-checker">
+        <div class="delivery-checker-wrap">
+            <div class="delivery-checker-card" data-aos="fade-right">
+                <span class="section-tag">Express Hot Delivery</span>
+                <h3>Check Delivery To Your Area</h3>
+                <p>We deliver piping hot handi, karahi, and fresh naan across Naseerabad, Cantt, Westridge, and Rawalpindi. Select your area below for instant timing &amp; delivery fee details:</p>
+                <div class="zone-select-row">
+                    <select id="deliveryZoneSelect" class="zone-select" onchange="checkDeliveryZone()" aria-label="Select Delivery Area">
+                        <option value="">-- Choose Rawalpindi Area --</option>
+                        <option value="naseerabad" selected>Naseerabad (Local Dera Area)</option>
+                        <option value="westridge">Westridge I, II &amp; III</option>
+                        <option value="peshawar">Peshawar Road &amp; Chur Chowk</option>
+                        <option value="saddar">Saddar / Rawalpindi Cantt</option>
+                        <option value="tench">Tench Bhatta / Dhok Syedan</option>
+                        <option value="chaklala">Chaklala Scheme III</option>
+                        <option value="bahria">Bahria Town (Phase 1–8)</option>
+                        <option value="islamabad">Islamabad (I &amp; F Sectors)</option>
+                    </select>
+                    <button class="btn-check-zone" onclick="checkDeliveryZone()">
+                        <i class="fas fa-search-location"></i> Check
+                    </button>
+                </div>
+                <div class="zone-result-box active" id="zoneResultBox">
+                    <div class="zone-result-icon"><i class="fas fa-motorcycle"></i></div>
+                    <div class="zone-result-text">
+                        <h4>Naseerabad (Local Dera Area) — 15–25 Mins</h4>
+                        <p><strong>FREE Delivery</strong> • Immediate Hot Express straight from Naseerabad kitchen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container" data-aos="fade-left">
+                <iframe
+                    src="https://maps.google.com/maps?q=Naseerabad+Rawalpindi+Pakistan&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Rana Da Dera Restaurant Location Map"
+                ></iframe>
             </div>
         </div>
     </section>
@@ -593,9 +787,20 @@
         </div>
 
         <div class="cart-footer" id="cartFooter">
+            <!-- Coupon Code Section -->
+            <div class="cart-coupon-wrap">
+                <input type="text" id="cartCouponInput" placeholder="Promo Code (DERA10 / FIRSTORDER)" class="cart-coupon-input" aria-label="Enter coupon code">
+                <button class="btn-apply-coupon" onclick="applyCoupon()">Apply</button>
+            </div>
+            <div id="couponAppliedBadge" class="coupon-applied-badge" style="display:none;"></div>
+
             <div class="cart-summary-row">
                 <span>Subtotal</span>
                 <span id="cartSubtotal">PKR 0</span>
+            </div>
+            <div class="cart-summary-row" id="cartDiscountRow" style="display:none; color:var(--green); font-weight:600;">
+                <span>Discount Applied</span>
+                <span id="cartDiscountValue">- PKR 0</span>
             </div>
             <div class="cart-summary-row">
                 <span>Delivery (Naseerabad &amp; RWP)</span>
@@ -622,6 +827,37 @@
     <div class="cart-toast" id="cartToast">
         <i class="fas fa-check-circle"></i>
         <span id="cartToastMsg">Item added to cart!</span>
+    </div>
+
+    <!-- ================================================
+         FEATURE 2: DISH QUICK-VIEW MODAL
+         ================================================ -->
+    <div class="quickview-backdrop" id="quickviewBackdrop" onclick="if(event.target===this)closeQuickView()">
+        <div class="quickview-modal" id="quickviewModal" role="dialog" aria-modal="true" aria-label="Dish Details">
+            <button class="quickview-close" onclick="closeQuickView()" aria-label="Close dialog">&times;</button>
+            <div class="quickview-image-wrap">
+                <img src="" id="qvImage" alt="Dish photo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80';">
+            </div>
+            <div class="quickview-content">
+                <span class="quickview-badge" id="qvBadge">🔥 Specialty</span>
+                <h2 class="quickview-title" id="qvTitle">Dish Name</h2>
+                <p class="quickview-desc" id="qvDesc">Dish description goes here.</p>
+                <div class="quickview-meta-row">
+                    <span class="quickview-pill spice-meter" id="qvSpice">🌶️🌶️ Medium</span>
+                    <span class="quickview-pill" id="qvServing">Serves 2-3 Persons</span>
+                </div>
+                <div style="margin-bottom:12px; font-size:13px; font-weight:700; color:var(--dark);">Key Desi Ingredients:</div>
+                <div class="quickview-meta-row" id="qvIngredients">
+                    <!-- Pills injected by JS -->
+                </div>
+                <div class="quickview-price-row">
+                    <div class="quickview-price" id="qvPrice">PKR 0</div>
+                    <button class="btn-primary" id="qvAddBtn" style="padding:12px 28px; font-size:14px;">
+                        <i class="fas fa-cart-plus"></i> Add to Order
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Back to Top -->
