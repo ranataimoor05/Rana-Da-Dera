@@ -34,13 +34,16 @@
          ================================================ -->
     <div class="mobile-menu" id="mobileMenu">
         <span class="mobile-close" onclick="closeMobileMenu()">&#10005;</span>
-        <a href="#home"        onclick="closeMobileMenu()">Home</a>
-        <a href="#about"       onclick="closeMobileMenu()">About</a>
-        <a href="#menu"        onclick="closeMobileMenu()">Menu</a>
-        <a href="#gallery"     onclick="closeMobileMenu()">Gallery</a>
-        <a href="#reviews"     onclick="closeMobileMenu()">Reviews</a>
-        <a href="#reservation" onclick="closeMobileMenu()">Reserve Table</a>
-        <a href="#contact"     onclick="closeMobileMenu()">Contact</a>
+        <a href="#home"                onclick="closeMobileMenu()">Home</a>
+        <a href="menu.html"            onclick="closeMobileMenu()" style="color:var(--gold);">Royal Menu</a>
+        <a href="#about"               onclick="closeMobileMenu()">About</a>
+        <a href="#gallery"             onclick="closeMobileMenu()">Gallery</a>
+        <a href="#reviews"             onclick="closeMobileMenu()">Reviews</a>
+        <a href="#reservation"         onclick="closeMobileMenu()">Reserve Table</a>
+        <a href="#contact"             onclick="closeMobileMenu()">Contact</a>
+        <a href="javascript:void(0)"   onclick="closeMobileMenu(); openCart();" style="color:var(--green);">
+            <i class="fas fa-shopping-bag"></i> View Cart (<span class="cart-badge" style="position:static; display:inline-flex;">0</span>)
+        </a>
     </div>
 
     <!-- ================================================
@@ -48,7 +51,7 @@
          ================================================ -->
     <nav class="navbar" id="navbar">
         <div class="nav-left">
-            <a href="#menu" class="active">Menu</a>
+            <a href="menu.html">Royal Menu</a>
             <a href="#about">About</a>
             <a href="#reservation">Reserve</a>
         </div>
@@ -99,7 +102,7 @@
             </p>
 
             <div class="hero-buttons">
-                <a href="#menu" class="btn-primary">
+                <a href="menu.html" class="btn-primary">
                     <i class="fas fa-utensils"></i> Explore Menu
                 </a>
                 <a href="#reservation" class="btn-gold">
@@ -184,8 +187,8 @@
                 <div class="feature-item"><i class="fas fa-check-circle"></i> Dine-In &amp; Takeaway</div>
                 <div class="feature-item"><i class="fas fa-check-circle"></i> Family Friendly</div>
             </div>
-            <a href="#menu" class="btn-outline">
-                <i class="fas fa-play-circle"></i> Explore Our Menu
+            <a href="menu.html" class="btn-outline">
+                <i class="fas fa-utensils"></i> Explore Our Menu
             </a>
         </div>
     </section>
@@ -209,6 +212,13 @@
 
         <!-- Dishes injected by script.js -->
         <div class="dishes-grid" id="dishesGrid"></div>
+
+        <!-- Explore Full Royal Menu Button -->
+        <div class="view-full-menu-wrap" data-aos="fade-up">
+            <a href="menu.html" class="btn-royal-menu">
+                <i class="fas fa-utensils"></i> View Full Royal Menu (18+ Dishes) <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
     </section>
 
     <!-- ================================================
@@ -523,8 +533,8 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Royal Menu</a></li>
                     <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                    <li><a href="#menu"><i class="fas fa-chevron-right"></i> Our Menu</a></li>
                     <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
                     <li><a href="#reservation"><i class="fas fa-chevron-right"></i> Reservation</a></li>
                 </ul>
@@ -540,7 +550,7 @@
                             <i class="fas fa-chevron-right"></i> WhatsApp Order
                         </a>
                     </li>
-                    <li><a href="#reservation"><i class="fas fa-chevron-right"></i> Book a Table</a></li>
+                    <li><a href="javascript:void(0)" onclick="openCart()"><i class="fas fa-chevron-right"></i> View Cart</a></li>
                 </ul>
             </div>
 
@@ -564,6 +574,55 @@
             </div>
         </div>
     </footer>
+
+    <!-- ================================================
+         CART DRAWER & BACKDROP
+         ================================================ -->
+    <div class="cart-backdrop" id="cartBackdrop" onclick="closeCart()"></div>
+    <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+        <div class="cart-header">
+            <div class="cart-header-title">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Your Order Cart (<span id="cartCountHeader">0</span>)</h3>
+            </div>
+            <button class="cart-close-btn" onclick="closeCart()" aria-label="Close cart">&times;</button>
+        </div>
+
+        <div class="cart-body" id="cartItemsContainer">
+            <!-- Injected by script.js -->
+        </div>
+
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-summary-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">PKR 0</span>
+            </div>
+            <div class="cart-summary-row">
+                <span>Delivery (Naseerabad &amp; RWP)</span>
+                <span class="delivery-free-badge">FREE</span>
+            </div>
+            <div class="cart-total-row">
+                <span>Total Amount</span>
+                <span id="cartTotal">PKR 0</span>
+            </div>
+            <div class="cart-note">
+                <input type="text" id="cartCustomerName" placeholder="Your Name (e.g. Tariq Khan)" class="cart-input">
+                <input type="text" id="cartCustomerAddress" placeholder="Delivery Address or Table # in Naseerabad" class="cart-input">
+            </div>
+            <button class="btn-whatsapp-checkout" onclick="checkoutWhatsApp()">
+                <i class="fab fa-whatsapp"></i> Confirm &amp; Order on WhatsApp
+            </button>
+            <button class="btn-clear-cart" onclick="clearCart()">
+                <i class="fas fa-trash-alt"></i> Clear Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="cart-toast" id="cartToast">
+        <i class="fas fa-check-circle"></i>
+        <span id="cartToastMsg">Item added to cart!</span>
+    </div>
 
     <!-- Back to Top -->
     <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
