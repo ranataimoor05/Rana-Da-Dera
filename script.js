@@ -233,7 +233,7 @@ const dishes = [
         spiceLevel : '🌶️🌶️ Traditional Spice',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['XXL Basmati Rice', 'Chicken Gravy', 'Pure Saffron', 'Fried Onions', 'Plum & Mint'],
-        img        : 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80',
+        img        : 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80',
         isPopular  : true
     },
     {
@@ -289,7 +289,7 @@ const dishes = [
         spiceLevel : '🌶️ Green Chili Only',
         serving    : 'Serves 2-3 Persons',
         ingredients: ['Fresh Chicken', 'Plump Tomatoes', 'Whole Green Chilies', 'Rock Salt'],
-        img        : 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80',
+        img        : 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&q=80',
         isPopular  : false
     },
     {
@@ -303,7 +303,7 @@ const dishes = [
         spiceLevel : '🌶️ Mild Cream Cheese',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['Boneless Chicken Cubes', 'Heavy Fresh Cream', 'White Pepper', 'Melted Cheese'],
-        img        : 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&q=80',
+        img        : 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80',
         isPopular  : false
     },
     {
@@ -331,7 +331,7 @@ const dishes = [
         spiceLevel : '🌶️ Warm & Savory',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['7 Grains & Lentils', 'Shredded Beef Resha', 'Crispy Golden Onions', 'Desi Ghee Tarka'],
-        img        : 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80',
+        img        : 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
         isPopular  : false
     },
     {
@@ -345,7 +345,7 @@ const dishes = [
         spiceLevel : '🌶️ Mild Buttery',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['Black Urad Dal', 'Fresh Cream', 'White Butter', 'Garlic Cumin Tarka'],
-        img        : 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&q=80',
+        img        : 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&q=80',
         isPopular  : false
     },
     {
@@ -373,7 +373,7 @@ const dishes = [
         spiceLevel : 'Mild Garlic',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['Mozzarella Cheese', 'Cheddar Cheese', 'Roasted Garlic', 'Fresh Herbs'],
-        img        : 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80',
+        img        : 'https://images.unsplash.com/photo-1626074353765-517a681e40be?w=600&q=80',
         isPopular  : false
     },
     {
@@ -387,7 +387,7 @@ const dishes = [
         spiceLevel : 'Sweet Dessert',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['Hand-churned Malai Kulfa', 'Slow-cooked Thick Rabri', 'Pure Rooh Afza', 'Basil Seeds'],
-        img        : 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80',
+        img        : 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80',
         isPopular  : false
     },
     {
@@ -401,7 +401,7 @@ const dishes = [
         spiceLevel : 'Sweet Chilled',
         serving    : 'Serves 1 Person',
         ingredients: ['Fresh Curd Dahi', 'Buffalo Milk Malai', 'Crushed Ice', 'Served in Mitti Matka'],
-        img        : 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=80',
+        img        : 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&q=80',
         isPopular  : false
     }
 ];
