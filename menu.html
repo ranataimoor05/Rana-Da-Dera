@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Menu — Rana Da Dera | Naseerabad, Rawalpindi</title>
+    <meta name="description" content="Explore the full authentic royal menu of Rana Da Dera: Mutton Karahi, Charcoal BBQ, Handi, Biryani, Nihari & fresh Naan. Naseerabad, Rawalpindi.">
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Theme Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ================================================
+         PAGE LOADER
+         ================================================ -->
+    <div class="page-loader" id="loader">
+        <div class="loader-logo">RANA DA DERA</div>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
+        <div class="loader-sub">Our Full Royal Menu</div>
+    </div>
+
+    <!-- ================================================
+         MOBILE MENU
+         ================================================ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <span class="mobile-close" onclick="closeMobileMenu()">&#10005;</span>
+        <a href="index.html"             onclick="closeMobileMenu()">Home</a>
+        <a href="menu.html"              onclick="closeMobileMenu()" style="color:var(--gold);">Full Menu</a>
+        <a href="index.html#about"       onclick="closeMobileMenu()">About Us</a>
+        <a href="index.html#gallery"     onclick="closeMobileMenu()">Gallery</a>
+        <a href="index.html#reviews"     onclick="closeMobileMenu()">Reviews</a>
+        <a href="index.html#reservation" onclick="closeMobileMenu()">Reserve Table</a>
+        <a href="index.html#contact"     onclick="closeMobileMenu()">Contact</a>
+        <a href="javascript:void(0)"     onclick="closeMobileMenu(); openCart();" style="color:var(--green);">
+            <i class="fas fa-shopping-bag"></i> View Cart (<span class="cart-badge" style="position:static; display:inline-flex;">0</span>)
+        </a>
+    </div>
+
+    <!-- ================================================
+         NAVBAR
+         ================================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="menu.html" class="active">Royal Menu</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#reservation">Reserve</a>
+        </div>
+
+        <div class="nav-logo">
+            <a href="index.html" style="text-decoration:none; color:inherit;">
+                <h1>RANA DA DERA</h1>
+                <p>Fine Dining &amp; Restaurant</p>
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-cart" title="View Your Cart" aria-label="Open Cart">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge">0</span>
+            </div>
+            <div class="hamburger" onclick="openMobileMenu()" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================================================
+         MENU HERO BANNER
+         ================================================ -->
+    <section class="menu-hero">
+        <div data-aos="fade-up">
+            <div class="menu-hero-badge">
+                <i class="fas fa-crown"></i> Authentic Desi Flavors
+            </div>
+            <h1 class="menu-hero-title">
+                Our Full <span>Royal Menu</span>
+            </h1>
+            <p class="menu-hero-subtitle">
+                Crafted with authentic Punjabi recipes, fresh hand-slaughtered meats, pure desi ghee, and roasted whole spices. Available every day from <strong>2:00 AM to 3:00 PM</strong> in Naseerabad, Rawalpindi.
+            </p>
+            <div class="menu-breadcrumbs">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <span>/</span>
+                <span>Royal Menu</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         MENU TOOLBAR (Search & Category Filters)
+         ================================================ -->
+    <section class="menu-toolbar-wrap">
+        <div class="menu-search-bar" data-aos="fade-up">
+            <div class="menu-search-input-wrap">
+                <i class="fas fa-search"></i>
+                <input
+                    type="text"
+                    id="menuSearchInput"
+                    placeholder="Search dishes (e.g. Mutton Karahi, Seekh Kebab, Biryani, Nihari)..."
+                    aria-label="Search dishes"
+                >
+            </div>
+            <select id="menuSortSelect" class="menu-sort-select" aria-label="Sort dishes">
+                <option value="default">Default Order</option>
+                <option value="popular">Most Popular First</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+            </select>
+        </div>
+
+        <div class="menu-categories-scroll" data-aos="fade-up" data-aos-delay="100">
+            <button class="menu-cat-btn active" onclick="filterFullMenuCategory('all', this)">
+                <i class="fas fa-utensils"></i> All Dishes <span>18</span>
+            </button>
+            <button class="menu-cat-btn" onclick="filterFullMenuCategory('karahi', this)">
+                🥘 Karahi &amp; Handi <span>3</span>
+            </button>
+            <button class="menu-cat-btn" onclick="filterFullMenuCategory('bbq', this)">
+                🔥 BBQ &amp; Grills <span>5</span>
+            </button>
+            <button class="menu-cat-btn" onclick="filterFullMenuCategory('rice', this)">
+                🍚 Rice &amp; Biryani <span>2</span>
+            </button>
+            <button class="menu-cat-btn" onclick="filterFullMenuCategory('desi', this)">
+                🍲 Desi Specials <span>4</span>
+            </button>
+            <button class="menu-cat-btn" onclick="filterFullMenuCategory('breads', this)">
+                🥖 Tandoori Breads <span>2</span>
+            </button>
+            <button class="menu-cat-btn" onclick="filterFullMenuCategory('desserts', this)">
+                🍨 Desserts &amp; Lassi <span>2</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ================================================
+         FULL MENU GRID
+         ================================================ -->
+    <section class="full-menu-section">
+        <div class="menu-results-count" id="menuResultsCount">
+            Showing all items
+        </div>
+
+        <div class="dishes-grid" id="fullMenuGrid">
+            <!-- Dynamically populated by script.js -->
+        </div>
+    </section>
+
+    <!-- ================================================
+         SPECIAL EVENT CTA BANNER
+         ================================================ -->
+    <section class="newsletter" style="padding-top: 20px;">
+        <div class="newsletter-wrap" data-aos="fade-up">
+            <img
+                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80"
+                alt="Dining Hall Rana Da Dera"
+                class="newsletter-img"
+            >
+            <div class="newsletter-content">
+                <span class="tag">Dine-In &amp; Catering</span>
+                <h2>Hosting a Family Gathering or Daawat?</h2>
+                <p>We take advance reservations and party catering orders for large families, wedding functions, and corporate dinners.</p>
+                <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                    <a href="index.html#reservation" class="btn-gold" style="font-size:15px; padding:14px 30px;">
+                        <i class="fas fa-calendar-check"></i> Book a Table
+                    </a>
+                    <a href="https://wa.me/923014431520?text=Assalam-u-Alaikum!%20I%20want%20to%20inquire%20about%20party%20catering%20from%20Rana%20Da%20Dera." target="_blank" rel="noopener" class="btn-primary" style="font-size:15px; padding:14px 30px; background:#25D366; border:none;">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         FOOTER
+         ================================================ -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <h2>RANA DA DERA</h2>
+                <span class="sub">Fine Dining &amp; Restaurant</span>
+                <p>Serving authentic Punjabi cuisine with love, warmth, and tradition for over 15 years. Come taste the real flavors of Punjab.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/923014431520" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Royal Menu</a></li>
+                    <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="index.html#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="index.html#reservation"><i class="fas fa-chevron-right"></i> Reservation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="index.html#delivery"><i class="fas fa-chevron-right"></i> Delivery Info</a></li>
+                    <li><a href="index.html#reviews"><i class="fas fa-chevron-right"></i> Reviews</a></li>
+                    <li>
+                        <a href="https://wa.me/923014431520" target="_blank" rel="noopener">
+                            <i class="fas fa-chevron-right"></i> WhatsApp Order
+                        </a>
+                    </li>
+                    <li><a href="javascript:void(0)" onclick="openCart()"><i class="fas fa-chevron-right"></i> View Cart</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact">
+                    <p><strong>&#128205;</strong> Naseerabad, Rawalpindi<br>Punjab, Pakistan</p>
+                    <p><strong>&#128222;</strong> 0301-4431520</p>
+                    <p><strong>&#128336;</strong> 2:00 AM – 3:00 PM<br>Open Every Day</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rana Da Dera. All Rights Reserved. | Naseerabad, Rawalpindi</p>
+            <div class="payment-badges">
+                <span>Cash</span>
+                <span>JazzCash</span>
+                <span>Easypaisa</span>
+                <span>Bank Transfer</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================================================
+         CART DRAWER & BACKDROP
+         ================================================ -->
+    <div class="cart-backdrop" id="cartBackdrop" onclick="closeCart()"></div>
+    <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+        <div class="cart-header">
+            <div class="cart-header-title">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Your Order Cart (<span id="cartCountHeader">0</span>)</h3>
+            </div>
+            <button class="cart-close-btn" onclick="closeCart()" aria-label="Close cart">&times;</button>
+        </div>
+
+        <div class="cart-body" id="cartItemsContainer">
+            <!-- Injected by script.js -->
+        </div>
+
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-summary-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">PKR 0</span>
+            </div>
+            <div class="cart-summary-row">
+                <span>Delivery (Naseerabad &amp; RWP)</span>
+                <span class="delivery-free-badge">FREE</span>
+            </div>
+            <div class="cart-total-row">
+                <span>Total Amount</span>
+                <span id="cartTotal">PKR 0</span>
+            </div>
+            <div class="cart-note">
+                <input type="text" id="cartCustomerName" placeholder="Your Name (e.g. Tariq Khan)" class="cart-input">
+                <input type="text" id="cartCustomerAddress" placeholder="Delivery Address or Table # in Naseerabad" class="cart-input">
+            </div>
+            <button class="btn-whatsapp-checkout" onclick="checkoutWhatsApp()">
+                <i class="fab fa-whatsapp"></i> Confirm &amp; Order on WhatsApp
+            </button>
+            <button class="btn-clear-cart" onclick="clearCart()">
+                <i class="fas fa-trash-alt"></i> Clear Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="cart-toast" id="cartToast">
+        <i class="fas fa-check-circle"></i>
+        <span id="cartToastMsg">Item added to cart!</span>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
