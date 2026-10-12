@@ -163,7 +163,7 @@ const dishes = [
         spiceLevel : '🌶️🌶️ Medium Hot',
         serving    : 'Serves 2-3 Persons',
         ingredients: ['Pure Desi Ghee', 'Fresh Potohar Mutton', 'Fresh Tomatoes', 'Green Chilies', 'Crushed Ginger'],
-        img        : 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80',
+        img        : 'images/mutton-karahi.jpg',
         isPopular  : true
     },
     {
@@ -177,7 +177,7 @@ const dishes = [
         spiceLevel : '🌶️ Mild Creamy',
         serving    : 'Serves 2-3 Persons',
         ingredients: ['Boneless Chicken', 'Dairy Butter', 'Dairy Fresh Cream', 'Black Pepper', 'Clay Pot Cooked'],
-        img        : 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&q=80',
+        img        : 'images/chicken-handi.jpg',
         isPopular  : true
     },
     {
@@ -191,7 +191,7 @@ const dishes = [
         spiceLevel : '🌶️🌶️ Medium Spicy',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['Fresh Minced Beef', 'Charcoal Smoked', 'Fresh Mint & Coriander', 'Secret Masala'],
-        img        : 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&q=80',
+        img        : 'images/beef-seekh-kebab.jpg',
         isPopular  : true
     },
     {
@@ -205,7 +205,7 @@ const dishes = [
         spiceLevel : '🌶️🌶️ Assorted Spices',
         serving    : 'Serves 4-5 Persons',
         ingredients: ['Mutton Chops', 'Chicken Boti', 'Beef Seekh Kebabs', 'Malai Tikka', 'Tandoori Naan'],
-        img        : 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80',
+        img        : 'images/mix-bbq-platter.jpg',
         isPopular  : true
     },
     {
@@ -219,7 +219,7 @@ const dishes = [
         spiceLevel : '🌶️🌶️🌶️ Spicy & Smoky',
         serving    : 'Serves 1 Person',
         ingredients: ['Chicken Quarter', 'Strained Yogurt', 'Red Chili Tandoori Rub', 'Coal Smoked'],
-        img        : 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=600&q=80',
+        img        : 'images/chicken-tikka.jpg',
         isPopular  : true
     },
     {
@@ -233,7 +233,7 @@ const dishes = [
         spiceLevel : '🌶️🌶️ Traditional Spice',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['XXL Basmati Rice', 'Chicken Gravy', 'Pure Saffron', 'Fried Onions', 'Plum & Mint'],
-        img        : 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80',
+        img        : 'images/chicken-biryani.jpg',
         isPopular  : true
     },
     {
@@ -247,7 +247,7 @@ const dishes = [
         spiceLevel : '🌶️ Mild & Savory',
         serving    : 'Serves 2 Persons',
         ingredients: ['Mutton Yakhni Stock', 'Aged Basmati Rice', 'Beef Fat Tallow', 'Golden Raisins'],
-        img        : 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=80',
+        img        : 'images/mutton-pulao.jpg',
         isPopular  : true
     },
     {
@@ -261,7 +261,7 @@ const dishes = [
         spiceLevel : '🌶️🌶️ Rich & Warm',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['Beef Shank Bong', 'Slow-cooked 8 Hours', 'Nihari Tarka', 'Julienned Ginger & Lemon'],
-        img        : 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80',
+        img        : 'images/nihari-special.jpg',
         isPopular  : true
     },
     {
@@ -275,7 +275,7 @@ const dishes = [
         spiceLevel : '🌶️ Mild Gelatinous Broth',
         serving    : 'Serves 1 Person',
         ingredients: ['Beef Trotters', 'Slow-simmered Overnight', 'Bone Marrow Essence', 'Garam Masala'],
-        img        : 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80',
+        img        : 'images/paye-trotters.jpg',
         isPopular  : true
     },
     {
@@ -289,7 +289,7 @@ const dishes = [
         spiceLevel : '🌶️ Green Chili Only',
         serving    : 'Serves 2-3 Persons',
         ingredients: ['Fresh Chicken', 'Plump Tomatoes', 'Whole Green Chilies', 'Rock Salt'],
-        img        : 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&q=80',
+        img        : 'images/chicken-shinwari.jpg',
         isPopular  : false
     },
     {
@@ -303,7 +303,7 @@ const dishes = [
         spiceLevel : '🌶️ Mild Cream Cheese',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['Boneless Chicken Cubes', 'Heavy Fresh Cream', 'White Pepper', 'Melted Cheese'],
-        img        : 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80',
+        img        : 'images/malai-boti.jpg',
         isPopular  : false
     },
     {
@@ -317,7 +317,7 @@ const dishes = [
         spiceLevel : '🌶️🌶️ Medium Smoky',
         serving    : 'Serves 2 Persons',
         ingredients: ['Prime Mutton Ribs', 'Cracked Coriander', 'Raw Papaya Tenderizer', 'Charcoal Grilled'],
-        img        : 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80',
+        img        : 'images/mutton-chops.jpg',
         isPopular  : false
     },
     {
@@ -331,7 +331,7 @@ const dishes = [
         spiceLevel : '🌶️ Warm & Savory',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['7 Grains & Lentils', 'Shredded Beef Resha', 'Crispy Golden Onions', 'Desi Ghee Tarka'],
-        img        : 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
+        img        : 'images/haleem-special.jpg',
         isPopular  : false
     },
     {
@@ -345,7 +345,7 @@ const dishes = [
         spiceLevel : '🌶️ Mild Buttery',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['Black Urad Dal', 'Fresh Cream', 'White Butter', 'Garlic Cumin Tarka'],
-        img        : 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&q=80',
+        img        : 'images/daal-makhni.jpg',
         isPopular  : false
     },
     {
@@ -359,7 +359,7 @@ const dishes = [
         spiceLevel : 'Non-Spicy Bread',
         serving    : 'Serves 2-3 Persons',
         ingredients: ['Refined Flour Dough', 'Pure Desi Ghee', 'White Sesame Seeds', 'Kalonji Seeds'],
-        img        : 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80',
+        img        : 'images/roghni-naan.jpg',
         isPopular  : false
     },
     {
@@ -373,7 +373,7 @@ const dishes = [
         spiceLevel : 'Mild Garlic',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['Mozzarella Cheese', 'Cheddar Cheese', 'Roasted Garlic', 'Fresh Herbs'],
-        img        : 'https://images.unsplash.com/photo-1626074353765-517a681e40be?w=600&q=80',
+        img        : 'images/garlic-cheese-naan.jpg',
         isPopular  : false
     },
     {
@@ -387,7 +387,7 @@ const dishes = [
         spiceLevel : 'Sweet Dessert',
         serving    : 'Serves 1-2 Persons',
         ingredients: ['Hand-churned Malai Kulfa', 'Slow-cooked Thick Rabri', 'Pure Rooh Afza', 'Basil Seeds'],
-        img        : 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80',
+        img        : 'images/kulfa-falooda.jpg',
         isPopular  : false
     },
     {
@@ -401,7 +401,7 @@ const dishes = [
         spiceLevel : 'Sweet Chilled',
         serving    : 'Serves 1 Person',
         ingredients: ['Fresh Curd Dahi', 'Buffalo Milk Malai', 'Crushed Ice', 'Served in Mitti Matka'],
-        img        : 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&q=80',
+        img        : 'images/punjabi-lassi.jpg',
         isPopular  : false
     }
 ];
