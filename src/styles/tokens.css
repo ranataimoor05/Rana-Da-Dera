@@ -1,0 +1,123 @@
+/* =====================================================================
+   RANA DA DERA DESIGN SYSTEM TOKENS
+   Forest Green & Dark Green Primary Identity | Gold Accents | Glassmorphism
+   ===================================================================== */
+
+:root {
+  /* Brand Core Colors - Forest Green Spectrum */
+  --color-primary-950: #05140d;
+  --color-primary-900: #0a2417;
+  --color-primary-850: #0e3020;
+  --color-primary-800: #123d29;
+  --color-primary-700: #185237;
+  --color-primary-600: #1e6645;
+  --color-primary-500: #257e55;
+  --color-primary-400: #34a371;
+  --color-primary-300: #57c090;
+
+  /* Royal Gold Spectrum */
+  --color-gold-900: #59440e;
+  --color-gold-800: #826315;
+  --color-gold-700: #aa821c;
+  --color-gold-600: #cca02c;
+  --color-gold-500: #dfb235;
+  --color-gold-400: #f1c74b;
+  --color-gold-300: #f7d87a;
+  --color-gold-200: #fae7a9;
+  --color-gold-100: #fdf5dc;
+
+  /* Accent & Functional Colors */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Typography Scales */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-urdu: 'Noto Nastaliq Urdu', 'Amiri', 'Urdu Typesetting', serif;
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =====================================================================
+   THEME: LUXURY DARK (MIDNIGHT DERA) - DEFAULT
+   ===================================================================== */
+body.dark-theme {
+  --bg-app: #06110a;
+  --bg-surface: #0b1e13;
+  --bg-surface-elevated: #11291b;
+  --bg-surface-card: rgba(15, 38, 26, 0.75);
+  --bg-glass: rgba(11, 30, 19, 0.82);
+  --bg-glass-strong: rgba(7, 20, 13, 0.94);
+  --bg-glass-card: rgba(18, 45, 31, 0.65);
+  
+  --border-subtle: rgba(223, 178, 53, 0.15);
+  --border-glass: rgba(241, 199, 75, 0.22);
+  --border-glass-hover: rgba(241, 199, 75, 0.45);
+
+  --text-main: #f5f8f6;
+  --text-muted: #9bb5a6;
+  --text-dim: #6d8879;
+  --text-gold: #f1c74b;
+  --text-gold-bright: #fde68a;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 6px 25px rgba(223, 178, 53, 0.25);
+  --shadow-capsule: 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 1px 1px rgba(241, 199, 75, 0.2);
+}
+
+/* =====================================================================
+   THEME: ROYAL DAY (LIGHT THEME)
+   ===================================================================== */
+body.light-theme {
+  --bg-app: #f9f8f4;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f4efe4;
+  --bg-surface-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.88);
+  --bg-glass-strong: rgba(255, 255, 255, 0.96);
+  --bg-glass-card: rgba(255, 255, 255, 0.82);
+
+  --border-subtle: rgba(14, 48, 32, 0.1);
+  --border-glass: rgba(170, 130, 28, 0.28);
+  --border-glass-hover: rgba(170, 130, 28, 0.55);
+
+  --text-main: #0c2014;
+  --text-muted: #3a5344;
+  --text-dim: #647d6f;
+  --text-gold: #9d7515;
+  --text-gold-bright: #7c5c0c;
+
+  --shadow-sm: 0 2px 6px rgba(12, 32, 20, 0.06);
+  --shadow-md: 0 8px 20px rgba(12, 32, 20, 0.09);
+  --shadow-lg: 0 16px 36px rgba(12, 32, 20, 0.12);
+  --shadow-gold: 0 6px 20px rgba(170, 130, 28, 0.18);
+  --shadow-capsule: 0 8px 25px rgba(12, 32, 20, 0.12), 0 0 1px 1px rgba(170, 130, 28, 0.2);
+}
